@@ -9,9 +9,11 @@ app.use('/', express.static('public'))
 let http = require("http");
 let server = http.createServer(app);
 
-server.listen(3000,()=>{
-    console.log("listening at 3000")
-})
+let port = process.env.PORT || 3000;
+server.listen(port, ()=> {
+console.log('listening at ', port);
+});
+
 
 let io = require("socket.io")
 io = new io.Server(server);
