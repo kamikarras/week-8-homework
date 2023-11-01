@@ -15,24 +15,12 @@ window.addEventListener('load', function () {
         myId=id;
         
         console.log("welcome " + id)
-        // let mySphere = this.document.createElement("a-entity");
-        // mySphere.setAttribute('geometry', {
-        //     primitive: 'sphere',
-        //     height: 1,
-        //     width: 1,
-        //     depth: 1
-        // });
-        // mySphere.setAttribute('material', 'color', 'red')
-        // mySphere.setAttribute('position', position);
-        // mySphere.id = 'id'
-        // sceneEl.appendChild(mySphere)
-        // spheres.push({sphere:mySphere, id: id})
+
        
 
       })
       socket.on('dataAll',users=>{
         console.log(users);
-        // spheres[0].sphere.setAttribute('position', {x:obj.x, y:obj.y, z:obj.z-3});
         users.forEach(user=>{
             
             spheres.forEach(sphere=>{
@@ -47,7 +35,7 @@ window.addEventListener('load', function () {
             })
             if(!ids.includes(user.id)){
                 let userSphere = this.document.createElement("a-entity");
-                userSphere.setAttribute('material', 'color', '#'+Math.floor(Math.random()*16777215).toString(16))
+
         userSphere.setAttribute('geometry', {
             primitive: 'sphere',
             height: 1,

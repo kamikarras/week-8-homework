@@ -36,11 +36,6 @@ io.on("connection", (socket)=>{
       io.emit('dataAll', users)
     })
 
-    // socket.on("new-sphere",data=>{
-    //     console.log("new-sphere")
-    //     users.push(data)
-    //     console.log("users "+ users)
-    // })
   
     io.on("disconnect",()=>{
 
