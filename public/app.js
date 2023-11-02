@@ -50,12 +50,19 @@ window.addEventListener('load', function () {
             console.log(spheres)
         })
     })
-      
-
-      this.document.addEventListener("keypress",()=>{
-          let camera = document.querySelector("#camera")
+      const sendPosition = ()=>{
+        let camera = document.querySelector("#camera")
           position = camera.getAttribute('position')
           let data= {position:position, id:myId}
           socket.emit('data',data)
-      })
+          this.window.requestAnimationFrame(sendPosition)
+      }
+      window.requestAnimationFrame(sendPosition)
+
+    //   this.document.addEventListener("keypress",()=>{
+    //       let camera = document.querySelector("#camera")
+    //       position = camera.getAttribute('position')
+    //       let data= {position:position, id:myId}
+    //       socket.emit('data',data)
+    //   })
 })
